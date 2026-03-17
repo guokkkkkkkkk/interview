@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java 面试冲刺指南</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="top-nav">
+        <div class="brand">Java Interview Pro</div>
+        <a href="#tips" class="nav-link">提高通过率</a>
+      </nav>
+      <div class="hero-content">
+        <p class="tag">2026 求职季 · 面试必备</p>
+        <h1>Java 面试冲刺页面</h1>
+        <p class="subtitle">
+          覆盖高频知识点、常见面试问题与实战建议，帮助你更高效地准备 Java 技术面。
+        </p>
+        <a class="cta" href="#questions">开始刷题</a>
+      </div>
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+    </header>
+
+    <main>
+      <section id="questions" class="section">
+        <div class="section-title">
+          <h2>Java 面试常问问题</h2>
+          <p>点击问题卡片可展开查看建议回答方向。</p>
+        </div>
+
+        <div class="cards" id="questionCards">
+          <article class="card active">
+            <button class="card-header" type="button">
+              <span>1. HashMap 的底层结构和扩容机制是什么？</span>
+              <span class="icon">+</span>
+            </button>
+            <div class="card-body">
+              <p>
+                JDK1.8 采用 <strong>数组 + 链表 + 红黑树</strong> 结构，长度达到阈值触发扩容，扩容后通过
+                <code>(n - 1) & hash</code> 重新定位桶位。链表过长会树化，以优化查询性能。
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <button class="card-header" type="button">
+              <span>2. synchronized 和 ReentrantLock 有什么区别？</span>
+              <span class="icon">+</span>
+            </button>
+            <div class="card-body">
+              <p>
+                synchronized 是 JVM 层关键字，语法简单；ReentrantLock 是 JUC 提供的显示锁，支持可中断、超时尝试、公平锁等更灵活能力。
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <button class="card-header" type="button">
+              <span>3. 说说 JVM 内存模型与垃圾回收流程。</span>
+              <span class="icon">+</span>
+            </button>
+            <div class="card-body">
+              <p>
+                重点讲清<strong>堆、方法区、虚拟机栈</strong>等结构，以及常见 GC（如 G1）的分代回收、可达性分析、Stop-The-World 触发场景与调优思路。
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <button class="card-header" type="button">
+              <span>4. Spring IOC 和 AOP 的核心原理是什么？</span>
+              <span class="icon">+</span>
+            </button>
+            <div class="card-body">
+              <p>
+                IOC 通过容器管理 Bean 生命周期与依赖注入；AOP 借助动态代理（JDK/CGLIB）在不改业务代码的前提下织入日志、事务、权限控制等横切逻辑。
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <button class="card-header" type="button">
+              <span>5. 如何设计一个高并发下的秒杀系统？</span>
+              <span class="icon">+</span>
+            </button>
+            <div class="card-body">
+              <p>
+                可从流量削峰（网关限流、消息队列）、库存一致性（预扣库存、最终一致）、缓存策略（Redis 热点 Key）、防刷（验证码/风控）几个维度回答。
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="tips" class="section tips-section">
+        <div class="section-title">
+          <h2>如何提高面试通过率</h2>
+          <p>不仅要会写代码，还要会表达、会复盘。</p>
+        </div>
+
+        <div class="tips-grid">
+          <div class="tip">
+            <h3>构建知识地图</h3>
+            <p>按 Java 基础、并发、JVM、框架、数据库、系统设计做模块化梳理，每个模块准备 3~5 个可展开深聊的案例。</p>
+          </div>
+          <div class="tip">
+            <h3>STAR 项目表达</h3>
+            <p>用 Situation、Task、Action、Result 描述项目经历，突出你的角色、难点与量化结果。</p>
+          </div>
+          <div class="tip">
+            <h3>模拟高压问答</h3>
+            <p>每周至少 2 次 mock interview，训练在追问和打断场景下保持逻辑清晰、表达稳定。</p>
+          </div>
+          <div class="tip">
+            <h3>复盘错题清单</h3>
+            <p>建立“不会/答偏/答浅”题库，记录标准答案结构，面试前重点回看高频薄弱点。</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">© 2026 Java Interview Pro · 祝你拿下心仪 Offer</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
